@@ -12,7 +12,7 @@ Le formulaire doit comporter les éléments suivants
   - Pseudonyme
   - Twitter
   - Facebook
-  - Avatar
+  - Avatars
 
 Les éléments marqués (BONUS) ne sont pas obligatoires, ils joueront en votre faveur si le temps vous le permet 
 
