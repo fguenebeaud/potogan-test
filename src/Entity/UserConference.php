@@ -4,11 +4,15 @@ namespace Potogan\TestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="user_conference")
  * @ORM\Entity(repositoryClass="Potogan\Entity\Repository\UserConferenceRepository")
+ * @UniqueEntity(
+ *     fields={"email", "username"}
+ * )
  */
 class UserConference
 {
@@ -29,6 +33,7 @@ class UserConference
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=255)
+     * @Assert\NotBlank()
      */
     protected $username;
 
@@ -36,7 +41,7 @@ class UserConference
      * Prénom d'utilisateur
      *
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="firstname", type="string", length=255)
      */
     protected $firstname;
@@ -45,7 +50,7 @@ class UserConference
      * Nom d'utilisateur
      *
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="lastname", type="string", length=255)
      */
     protected $lastname;
@@ -54,7 +59,9 @@ class UserConference
      * Numéro de mobile
      *
      * @var string
-     *
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 8, max = 20)
+     * @Assert\Regex(pattern="/^\+31\(0\)[0-9]*$", message="number_only")
      * @ORM\Column(name="mobile", type="string", length=255)
      */
     protected $mobile;
@@ -65,6 +72,10 @@ class UserConference
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email."
+     * )
+     * @Assert\NotBlank()
      */
     protected $email;
 
@@ -87,9 +98,11 @@ class UserConference
     protected $facebook;
 
     /**
-     * @ORM\Column(name="avatar", type="string")
-     *
-     * @Assert\NotBlank(message="Please, upload the product brochure as a PDF file.")
+     * @ORM\Column(name="avatar", type="string", nullable=true)
+     * @Assert\Image(
+     *     maxWidth = 420,
+     *     maxHeight = 420
+     * )
      */
     private $avatar;
 

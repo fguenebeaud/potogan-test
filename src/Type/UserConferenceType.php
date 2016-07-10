@@ -21,27 +21,37 @@ class UserConferenceType extends AbstractType
             ->add(
                 'username',
                 'text',
-                array('label' => 'Pseudonyme')
+                array('label' => 'Pseudonyme',
+                      'required' => true
+                )
             )
             ->add(
                 'firstname',
                 'text',
-                array('label' => 'Prénom')
+                array('label' => 'Prénom',
+                    'required' => true
+                )
             )
             ->add(
                 'lastname',
                 'text',
-                array('label' => 'Nom')
+                array('label' => 'Nom',
+                    'required' => true
+                )
             )
             ->add(
                 'mobile',
                 'text',
-                array('label' => 'Téléphone Mobile')
+                array('label' => 'Téléphone Mobile',
+                    'required' => true
+                )
             )
             ->add(
                 'email',
                 'text',
-                array('label' => 'eMail')
+                array('label' => 'eMail',
+                    'required' => true
+                )
             )
             ->add(
                 'twitter',
