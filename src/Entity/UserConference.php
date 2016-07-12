@@ -5,14 +5,14 @@ namespace Potogan\TestBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Misd\PhoneNumberBundle\Validator\Constraints as MisdAssert;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="user_conference")
- * @ORM\Entity(repositoryClass="Potogan\Entity\Repository\UserConferenceRepository")
- * @UniqueEntity(
- *     fields={"email", "username"}
- * )
+ * @ORM\Entity()
+ * @UniqueEntity("email")
+ * @UniqueEntity("username")
  */
 class UserConference
 {
@@ -59,9 +59,9 @@ class UserConference
      * Numéro de mobile
      *
      * @var string
-     * @Assert\NotBlank()
+     *
      * @Assert\Length(min = 8, max = 20)
-     * @Assert\Regex(pattern="/^\+31\(0\)[0-9]*$", message="number_only")
+     * @MisdAssert\PhoneNumber()
      * @ORM\Column(name="mobile", type="string", length=255)
      */
     protected $mobile;
@@ -84,7 +84,7 @@ class UserConference
      *
      * @var string
      *
-     * @ORM\Column(name="twitter", type="string", length=255)
+     * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
      */
     protected $twitter;
 
@@ -93,7 +93,7 @@ class UserConference
      *
      * @var string
      *
-     * @ORM\Column(name="facebook", type="string", length=255)
+     * @ORM\Column(name="facebook", type="string", length=255, nullable=true)
      */
     protected $facebook;
 

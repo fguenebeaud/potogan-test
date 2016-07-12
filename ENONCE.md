@@ -24,7 +24,7 @@ Tous les éléments doivent avoir les éléments de validation suivants
   - Pseudonyme: Facultatif, Unique
   - Twitter: Facultatif, Commence par un @, (BONUS) Existe en réel (http://twitter.com/NOM)
   - Facebook: Facultatif, URL, (BONUS) Existe (http://facebook.com/NOM)
-  - Avatar (BONUS): Facultatif, Image, Taille maximum 420px x 420px
+  - Avatar (BONUS): Facultatif, Image, Taille maximum 420px x 420pxphp ap
 
 Ce formulaire doit être mappé dans une entité et être persistée dans une base de données de votre choix.
 Le formulaire se doit d'être un minimum mit en forme

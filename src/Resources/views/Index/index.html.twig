@@ -18,8 +18,10 @@
                     {{ form_label(form.username) }}
                 </div>
                 <div class="col-md-9">
-                    {{ form_errors(form.username) }}
                     {{ form_widget(form.username) }}
+                    <div class="input-group has-error">
+                        {{ form_errors(form.username) }}
+                    </div>
                 </div>
             </div>
             <div>&nbsp;</div>
@@ -28,8 +30,10 @@
                     {{ form_label(form.firstname) }}
                 </div>
                 <div class="col-md-9">
-                    {{ form_errors(form.firstname) }}
                     {{ form_widget(form.firstname) }}
+                    <div class="input-group has-error">
+                        {{ form_errors(form.firstname) }}
+                    </div>
                 </div>
             </div>
             <div>&nbsp;</div>
@@ -38,8 +42,10 @@
                     {{ form_label(form.lastname) }}
                 </div>
                 <div class="col-md-9">
-                    {{ form_errors(form.lastname) }}
                     {{ form_widget(form.lastname) }}
+                    <div class="input-group has-error">
+                        {{ form_errors(form.lastname) }}
+                    </div>
                 </div>
             </div>
             <div>&nbsp;</div>
@@ -48,8 +54,10 @@
                     {{ form_label(form.mobile) }}
                 </div>
                 <div class="col-md-9">
-                    {{ form_errors(form.mobile) }}
                     {{ form_widget(form.mobile) }}
+                    <div class="input-group has-error">
+                        {{ form_errors(form.mobile) }}
+                    </div>
                 </div>
             </div>
             <div>&nbsp;</div>
@@ -58,8 +66,10 @@
                     {{ form_label(form.email) }}
                 </div>
                 <div class="col-md-9">
-                    {{ form_errors(form.email) }}
                     {{ form_widget(form.email) }}
+                    <div class="input-group has-error">
+                        {{ form_errors(form.email) }}
+                    </div>
                 </div>
             </div>
             <div>&nbsp;</div>
@@ -68,8 +78,10 @@
                     {{ form_label(form.twitter) }}
                 </div>
                 <div class="col-md-9">
-                    {{ form_errors(form.twitter) }}
                     {{ form_widget(form.twitter) }}
+                    <div class="input-group has-error">
+                        {{ form_errors(form.twitter) }}
+                    </div>
                 </div>
             </div>
             <div>&nbsp;</div>
@@ -78,12 +90,26 @@
                     {{ form_label(form.facebook) }}
                 </div>
                 <div class="col-md-9">
-                    {{ form_errors(form.facebook) }}
                     {{ form_widget(form.facebook) }}
+                    <div class="input-group has-error">
+                        {{ form_errors(form.facebook) }}
+                    </div>
                 </div>
             </div>
-                {{ form_row(form.avatar) }}
-                {{ form_end(form) }}
+            <div>&nbsp;</div>
+            <div class="row">
+                <div class="col-md-3">
+                    {{ form_label(form.avatar) }}
+                </div>
+                <div class="col-md-9">
+                    {{ form_widget(form.avatar) }}
+                    <div class="input-group has-error">
+                        {{ form_errors(form.avatar) }}
+                    </div>
+                </div>
+            </div>
+            <div>&nbsp;</div>
+            {{ form_end(form) }}
         </div>
     </div>
 </div>

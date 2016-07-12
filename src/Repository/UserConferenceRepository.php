@@ -4,7 +4,7 @@ namespace Potogan\Entity\Repository;
 
 /**
  * Class UserConferenceRepository
- * @package Potogan\TestBundle\Entity
+ * @package Potogan\Entity\Repository
  */
 class UserConferenceRepository
 {

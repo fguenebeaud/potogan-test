@@ -21,49 +21,63 @@ class UserConferenceType extends AbstractType
             ->add(
                 'username',
                 'text',
-                array('label' => 'Pseudonyme',
-                      'required' => true
+                array(
+                    'label' => 'Pseudonyme',
+                    'required' => true,
                 )
             )
             ->add(
                 'firstname',
                 'text',
-                array('label' => 'Prénom',
-                    'required' => true
+                array(
+                    'label' => 'Prénom',
+                    'required' => true,
                 )
             )
             ->add(
                 'lastname',
                 'text',
-                array('label' => 'Nom',
-                    'required' => true
+                array(
+                    'label' => 'Nom',
+                    'required' => true,
                 )
             )
             ->add(
                 'mobile',
                 'text',
-                array('label' => 'Téléphone Mobile',
-                    'required' => true
+                array(
+                    'label' => 'Téléphone Mobile',
+                    'required' => false,
+                    'attr' => array(
+                        'placeholder' => '+33 x xx xx xx xx',
+                    ),
                 )
             )
             ->add(
                 'email',
                 'text',
-                array('label' => 'eMail',
-                    'required' => true
+                array(
+                    'label' => 'eMail',
+                    'required' => true,
                 )
             )
             ->add(
                 'twitter',
                 'text',
-                array('label' => 'Twitter')
+                array(
+                    'label' => 'Twitter',
+                    'required' => false,
+                )
             )
             ->add(
                 'facebook',
                 'text',
-                array('label' => 'Facebook')
+                array(
+                    'label' => 'Facebook',
+                    'required' => false,
+                )
             )
-            ->add('avatar', FileType::class, array('label' => 'Avatar du profil'));
+            ->add('avatar', FileType::class, array('label' => 'Avatar du profil', 'required' => false));
     }
 
     /**
